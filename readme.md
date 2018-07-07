@@ -9,8 +9,6 @@
 
 ### Установка
 
-<b>Репозиторий форкать нельзя!</b>.
-
 ```
 git clone <link to repositry>
 cd <repository_name>
@@ -66,3 +64,5 @@ php artisan key:generate
 ./vendor/bin/phpunit
 ./vendor/bin/phpunit --testsuite task1
 ```
+
+**Репозиторий форкать нельзя.**
