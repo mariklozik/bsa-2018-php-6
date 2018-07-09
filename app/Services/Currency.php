@@ -52,29 +52,4 @@ class Currency
     {
         return $this->isActive;
     }
-
-    public function setId(): int
-    {
-        return $this->id;
-    }
-    public function setName(): string
-    {
-        return $this->name;
-    }
-    public function setShortName(): string
-    {
-        return $this->shortName;
-    }
-    public function setActualCourse(): int
-    {
-        return $this->actualCourse;
-    }
-    public function setActualCourseDate(): \DateTime
-    {
-        return $this->actualCourseDate;
-    }
-    public function setIsActive(): bool
-    {
-        return $this->isActive;
-    }
 }
