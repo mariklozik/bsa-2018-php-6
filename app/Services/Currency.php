@@ -16,7 +16,7 @@ class Currency
                                 string $name,
                                 string $shortName,
                                 int $actualCourse,
-                                $actualCourseDate,
+                                \DateTime $actualCourseDate,
                                 bool $isActive
     )
     {
@@ -24,7 +24,7 @@ class Currency
         $this->name = $name;
         $this->shortName = $shortName;
         $this->actualCourse = $actualCourse;
-        $this->getActualCourseDate = $actualCourseDate;
+        $this->actualCourseDate = $actualCourseDate;
         $this->isActive = $isActive;
     }
 
@@ -44,11 +44,36 @@ class Currency
     {
         return $this->actualCourse;
     }
-    public function getActualCourseDate()
+    public function getActualCourseDate(): \DateTime
     {
         return $this->actualCourseDate;
     }
     public function isActive(): bool
+    {
+        return $this->isActive;
+    }
+
+    public function setId(): int
+    {
+        return $this->id;
+    }
+    public function setName(): string
+    {
+        return $this->name;
+    }
+    public function setShortName(): string
+    {
+        return $this->shortName;
+    }
+    public function setActualCourse(): int
+    {
+        return $this->actualCourse;
+    }
+    public function setActualCourseDate(): \DateTime
+    {
+        return $this->actualCourseDate;
+    }
+    public function setIsActive(): bool
     {
         return $this->isActive;
     }

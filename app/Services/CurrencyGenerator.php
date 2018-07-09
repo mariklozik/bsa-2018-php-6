@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Faker\Provider\cs_CZ\DateTime;
+
 class CurrencyGenerator
 {
     public static function generate(): array
@@ -13,7 +15,7 @@ class CurrencyGenerator
                 'short_name' => 'BTC',
                 'actual_course' => 6839.87,
                 'actual_course_date' => '1531048816',
-                'is_active' => true,
+                'active' => true,
             ],
             [
                 'id' => 1,
@@ -21,7 +23,7 @@ class CurrencyGenerator
                 'short_name' => 'ETH',
                 'actual_course' => 494.335,
                 'actual_course_date' => '1531048809',
-                'is_active' => false,
+                'active' => false,
             ],
             [
                 'id' => 52,
@@ -29,7 +31,7 @@ class CurrencyGenerator
                 'short_name' => 'XRP',
                 'actual_course' => 0.493234,
                 'actual_course_date' => '1531048802',
-                'is_active' => true,
+                'active' => true,
             ],
             [
                 'id' => 1831,
@@ -37,7 +39,7 @@ class CurrencyGenerator
                 'short_name' => 'BCH',
                 'actual_course' => 768.677,
                 'actual_course_date' => '1531048817',
-                'is_active' => false,
+                'active' => false,
             ],
             [
                 'id' => 1765,
@@ -45,7 +47,7 @@ class CurrencyGenerator
                 'short_name' => 'EOS',
                 'actual_course' => 9.045,
                 'actual_course_date' => '1531048816',
-                'is_active' => true,
+                'active' => true,
             ],
             [
                 'id' => 2,
@@ -53,7 +55,7 @@ class CurrencyGenerator
                 'short_name' => 'LTC',
                 'actual_course' => 85.3405,
                 'actual_course_date' => '1531048801',
-                'is_active' => false,
+                'active' => false,
             ],
             [
                 'id' => 512,
@@ -61,7 +63,7 @@ class CurrencyGenerator
                 'short_name' => 'XLM',
                 'actual_course' => 0.210575,
                 'actual_course_date' => '1531048802',
-                'is_active' => true,
+                'active' => true,
             ],
         ];
 
@@ -72,8 +74,8 @@ class CurrencyGenerator
                 $c['name'],
                 $c['short_name'],
                 $c['actual_course'],
-                $c['actual_course_date'],
-                $c['is_active']
+                new \DateTime(gmdate('d-m-Y', $c['actual_course_date'])),
+                $c['active']
             );
         }
 

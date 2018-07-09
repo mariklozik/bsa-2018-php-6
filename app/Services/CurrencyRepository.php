@@ -18,7 +18,7 @@ class CurrencyRepository implements CurrencyRepositoryInterface
     public function findActive(): array
     {
         $activeCurrencies = [];
-        foreach ($this->currencies as $c){
+        foreach ($this->currencies as $c) {
             if($c->isActive()) $activeCurrencies[] = $c;
         }
 
@@ -26,14 +26,30 @@ class CurrencyRepository implements CurrencyRepositoryInterface
     }
     public function findById(int $id): ?Currency
     {
-        return Currency::class;
+        foreach ($this->currencies as $c) {
+            if( $c->getId() === $id) {
+                return $c;
+            }
+        }
+        return null;
     }
     public function save(Currency $currency): void
     {
-
+        array_push($this->currencies, $currency);
     }
     public function delete(Currency $currency): void
     {
+        $id = $currency->getId();
+        foreach ($this->currencies as $c) {
+            if( $c->getId() === $id) {
+                break;
+            }
+        }
+    }
+
+    public function update($request, $id): void
+    {
+        $this->currencies;
 
     }
 }

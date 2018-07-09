@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('admin/currencies', 'AdminCurrenciesController@index')->name('admin-currencies');
+Route::get('admin', 'AdminCurrenciesController@index')->middleWare('RedirectToCurrenciesMiddleware');

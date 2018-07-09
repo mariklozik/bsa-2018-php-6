@@ -13,8 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('currencies')->group(function () {
+
+Route::get('/', 'CurrenciesController@getActiveCurrencies');
+    Route::get('{id}', 'CurrenciesController@getCurrencyById')->where('id', '[0-9]+');
 });
 
-Route::get('/currencies', 'CurrenciesController@getActiveCurrencies');
+Route::resource('admin/currencies', 'AdminCurrenciesController', ['except' => ['create', 'edit']]);

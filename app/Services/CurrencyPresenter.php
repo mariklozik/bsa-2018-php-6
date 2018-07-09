@@ -12,7 +12,7 @@ class CurrencyPresenter
             'short_name'            => $currency->getShortName(),
             'actual_course'         => $currency->getActualCourse(),
             'actual_course_date'    => $currency->getActualCourseDate(),
-            'is_active'             => $currency->isActive(),
+            'active'                => $currency->isActive(),
         ];
     }
 }
